@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./box.css";
 
 export const PokemonBox = ({ name, id, img, primary_color }) => {
+  const navigate = useNavigate();
   return (
-    <div className="box" style={{ backgroundColor: `${primary_color}` }}>
+    <article
+      onClick={() => navigate(`/card/${name}`)}
+      className="box"
+      style={{ backgroundColor: `${primary_color}` }}
+    >
       <div className="header-box">
         <p style={{ color: `${primary_color}` }}>#{id}</p>
         <img src={img} />
@@ -11,6 +17,6 @@ export const PokemonBox = ({ name, id, img, primary_color }) => {
       <div className="box-title">
         <h3>{name}</h3>
       </div>
-    </div>
+    </article>
   );
 };

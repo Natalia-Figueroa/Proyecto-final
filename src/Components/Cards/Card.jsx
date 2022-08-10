@@ -1,16 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export const Card = (props) => {
-  const navigate = useNavigate();
-
+export const Card = ({ pokemon }) => {
+  const { nombre } = useParams();
+  // encontrar en la lista de pokemon que este componente recibe como parametro
+  // todos los datos del pokemon con el nombre = nombre params
   return (
-    <div onClick={() => navigate("/card")} className="card">
+    <div className="card">
       <div className="pokeHeader">
-        <h1>{props.name}</h1>
-        <p>#{props.id}</p>
+        <h1>{pokemon.name}</h1>
+        <p>#{pokemon.id}</p>
       </div>
-      <div className="pokeImg">
+      {/* <div className="pokeImg">
         <img src={props.img} alt="" />
         <img src="" alt="" />
       </div>
@@ -43,7 +44,7 @@ export const Card = (props) => {
         </div>
       </section>
       <p>{props.description}</p>
-      <h2>Base Stats</h2>
+      <h2>Base Stats</h2> */}
     </div>
   );
 };
