@@ -11,6 +11,7 @@
 }
 
 .card {
+  flex-direction: column;
   box-sizing: border-box;
   width: 100%;
   padding: 40px;
@@ -22,7 +23,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  top: 50px;
+  top: -30px;
 }
 
 .leftArrow {
@@ -35,17 +36,36 @@
   width: 100%;
   background-color: white;
   border-radius: 10px;
-  padding: 15px;
+  padding: 95px 15px 15px 15px;
+  margin-top: -140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pokemonImg {
-  height: 300px;
+  margin: 0px;
+  height: 420px;
 }
 
 .pokeballImg {
-  height: 35%;
+  height: 370px;
   position: absolute;
   right: 20px;
   top: 20px;
   filter: opacity(0.1);
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+}
+
+.types p {
+  border-radius: 20px;
+  text-align: center;
+  width: 80px;
+  margin: 10px;
+  color: white;
 }

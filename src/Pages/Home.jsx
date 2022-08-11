@@ -5,9 +5,23 @@ import { pokemonList } from "../Database/Pokemon";
 
 export const Home = () => {
   const [order, setOrder] = useState(true);
+  const [search, setSearch] = useState("");
 
   const handleOrder = () => {
     setOrder(!order);
+  };
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    console.log(search);
+    matchSearch();
+  };
+
+  const regef = `/${search}/i`;
+
+  const matchSearch = () => {
+    const found = pokemonList.match(regef);
+    console.log(found);
   };
 
   return (
@@ -20,7 +34,7 @@ export const Home = () => {
           <img src="./Imagenes/Recursos/Arrow.svg" />
         </section>
       </header>
-      <input type="search" name="" value="" placeholder="Buscar" />
+      <input type="search" placeholder="Buscar" onChange={handleSearch} />
       <div className="App">
         {pokemonList.map((poke) => (
           <PokemonBox

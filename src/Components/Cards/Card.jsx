@@ -46,8 +46,12 @@ export const Card = ({ pokemonList }) => {
       <div className="whiteBox">
         {/* POKEMON TYPE*/}
         <div className="types">
-          <p>{newPokemon.type[0]}</p>
-          <p>{newPokemon.type[1]}</p>
+          <p style={{ backgroundColor: `${newPokemon.primary_color}` }}>
+            {newPokemon.type[0]}
+          </p>
+          <p style={{ backgroundColor: `${newPokemon.secondary_color}` }}>
+            {newPokemon.type[1]}
+          </p>
         </div>
         <h2>About</h2>
         <section className="about">
