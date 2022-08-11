@@ -42,8 +42,9 @@ export const Card = ({ pokemonList }) => {
         <img className="pokemonImg" src={newPokemon.img} alt="" />
         <img src="/Imagenes/Recursos/Frame.svg" alt="" />
       </div>
-      {/* POKEMON TYPE*/}
+      {/* EL WHITE BOX */}
       <div className="whiteBox">
+        {/* POKEMON TYPE*/}
         <div className="types">
           <p>{newPokemon.type[0]}</p>
           <p>{newPokemon.type[1]}</p>
