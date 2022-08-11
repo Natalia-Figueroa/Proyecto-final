@@ -12,8 +12,8 @@
 
 .card {
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   padding: 40px;
   position: absolute;
 }
@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  top: 90px;
+  top: 50px;
 }
 
 .leftArrow {
@@ -32,5 +32,19 @@
 }
 
 .whiteBox {
+  box-sizing: border-box;
+  width: 100%;
   background-color: white;
+}
+
+.pokemonImg {
+  height: 300px;
+}
+
+.pokeballImg {
+  height: 57%;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  filter: opacity(0.1);
 }

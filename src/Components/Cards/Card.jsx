@@ -36,6 +36,7 @@ export const Card = ({ pokemonList }) => {
         <p>#{newPokemon.id}</p>
       </div>
       {/* POKEMON IMAGE AND ARROW */}
+      <img className="pokeballImg" src="/Imagenes/Recursos/Pokeball.png" />
       <div className="pokeImgSection">
         <img className="leftArrow" src="/Imagenes/Recursos/Frame.svg" alt="" />
         <img className="pokemonImg" src={newPokemon.img} alt="" />
