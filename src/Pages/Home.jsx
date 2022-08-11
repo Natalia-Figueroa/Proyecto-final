@@ -5,23 +5,25 @@ import { pokemonList } from "../Database/Pokemon";
 
 export const Home = () => {
   const [order, setOrder] = useState(true);
-  const [search, setSearch] = useState("");
+  const [chosenList, setChosenList] = useState(pokemonList);
 
   const handleOrder = () => {
     setOrder(!order);
   };
 
+  let search;
+  let filteredList;
+
   const handleSearch = (e) => {
-    setSearch(e.target.value);
-    console.log(search);
-    matchSearch();
-  };
-
-  const regef = `/${search}/i`;
-
-  const matchSearch = () => {
-    const found = pokemonList.match(regef);
-    console.log(found);
+    search = e.target.value;
+    filteredList = pokemonList.filter((poke) => {
+      return poke.name.match(search);
+    });
+    if ((search = 0)) {
+      setChosenList(pokemonList);
+    } else {
+      setChosenList(filteredList);
+    }
   };
 
   return (
@@ -36,7 +38,7 @@ export const Home = () => {
       </header>
       <input type="search" placeholder="Buscar" onChange={handleSearch} />
       <div className="App">
-        {pokemonList.map((poke) => (
+        {chosenList.map((poke) => (
           <PokemonBox
             name={poke.name}
             id={poke.id}
@@ -48,3 +50,5 @@ export const Home = () => {
     </div>
   );
 };
+
+// if search.length === 0 dibuja pokemonlist : dibuja filteredList

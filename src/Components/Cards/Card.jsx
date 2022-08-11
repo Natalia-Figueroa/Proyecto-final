@@ -8,16 +8,13 @@ export const Card = ({ pokemonList }) => {
 
   // Después probar con UseState
 
-  let selectedPokemon = [];
+  let newPokemon;
 
   pokemonList.map((poke) => {
     if (poke.name === name) {
-      selectedPokemon.push(poke);
-      return selectedPokemon;
+      newPokemon = poke;
     }
   });
-
-  const newPokemon = selectedPokemon[0];
 
   return (
     <div
