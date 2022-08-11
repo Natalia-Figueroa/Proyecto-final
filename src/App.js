@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route
-            path={"/card/:nombre"}
+            path={"/card/:name"}
             element={<Card pokemon={pokemon} />}
           ></Route>
         </Routes>
