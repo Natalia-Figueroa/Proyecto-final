@@ -1,0 +1,36 @@
+.pokeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name_arrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  position: absolute;
+}
+
+.pokeImgSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 90px;
+}
+
+.leftArrow {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.whiteBox {
+  background-color: white;
+}

@@ -1,8 +1,8 @@
-export const pokemon = [
+export const pokemonList = [
   {
     name: "Aron",
     id: "304",
-    img: "./imagenes/Pokemones/aron.png",
+    img: "/imagenes/Pokemones/aron.png",
     type: ["Steel", "Rock"],
     weight: 60.0,
     heigth: 0.4,
@@ -21,7 +21,7 @@ export const pokemon = [
   {
     name: "Charmander",
     id: "004",
-    img: "./imagenes/Pokemones/charmander.png",
+    img: "/imagenes/Pokemones/charmander.png",
     type: ["Fire"],
     weight: 8.5,
     heigth: 0.6,
@@ -40,7 +40,7 @@ export const pokemon = [
   {
     name: "Bulbasaur",
     id: "001",
-    img: "./imagenes/Pokemones/bulbasaur.png",
+    img: "/imagenes/Pokemones/bulbasaur.png",
     type: ["Grass", "Polson"],
     weight: 6.9,
     heigth: 0.7,
@@ -59,7 +59,7 @@ export const pokemon = [
   {
     name: "Squirtle",
     id: "007",
-    img: "./imagenes/Pokemones/squirtle.png",
+    img: "/imagenes/Pokemones/squirtle.png",
     type: ["Water"],
     weight: 9.0,
     heigth: 0.5,
@@ -77,7 +77,7 @@ export const pokemon = [
   {
     name: "Ditto",
     id: "132",
-    img: "./imagenes/Pokemones/ditto.png",
+    img: "/imagenes/Pokemones/ditto.png",
     type: ["Normal"],
     weight: 4.0,
     heigth: 0.3,
@@ -96,7 +96,7 @@ export const pokemon = [
   {
     name: "Butterfree",
     id: "012",
-    img: "./imagenes/Pokemones/butterfree.png",
+    img: "/imagenes/Pokemones/butterfree.png",
     type: ["Bug", "Flying"],
     weight: 32.0,
     heigth: 1.1,
@@ -115,7 +115,7 @@ export const pokemon = [
   {
     name: "Gastly",
     id: "092",
-    img: "./imagenes/Pokemones/gastly.png",
+    img: "/imagenes/Pokemones/gastly.png",
     type: ["Ghost", "Type"],
     weight: 0.1,
     heigth: 1.3,
@@ -134,7 +134,7 @@ export const pokemon = [
   {
     name: "Pikachu",
     id: "025",
-    img: "./imagenes/Pokemones/pikachu.png",
+    img: "/imagenes/Pokemones/pikachu.png",
     type: ["Electric"],
     weight: 6.0,
     heigth: 0.4,
@@ -153,7 +153,7 @@ export const pokemon = [
   {
     name: "Mew",
     id: "152",
-    img: "./imagenes/Pokemones/mew.png",
+    img: "/imagenes/Pokemones/mew.png",
     type: ["Psychic"],
     weight: 4.0,
     heigth: 0.4,

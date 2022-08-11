@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 import { PokemonBox } from "../Components/Box/PokemonBox";
-import { pokemon } from "../Database/Pokemon";
+import { pokemonList } from "../Database/Pokemon";
 
 export const Home = () => {
   const [order, setOrder] = useState(true);
@@ -22,7 +22,7 @@ export const Home = () => {
       </header>
       <input type="search" name="" value="" placeholder="Buscar" />
       <div className="App">
-        {pokemon.map((poke) => (
+        {pokemonList.map((poke) => (
           <PokemonBox
             name={poke.name}
             id={poke.id}
