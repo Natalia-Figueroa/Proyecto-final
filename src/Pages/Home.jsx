@@ -4,11 +4,34 @@ import { PokemonBox } from "../Components/Box/PokemonBox";
 import { pokemonList } from "../Database/Pokemon";
 
 export const Home = () => {
-  const [order, setOrder] = useState(true);
+  const [order, setOrder] = useState(false);
   const [chosenList, setChosenList] = useState(pokemonList);
 
   const handleOrder = () => {
     setOrder(!order);
+    if (order) {
+      const sortingAlphaList = (a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+      };
+
+      setChosenList([...chosenList].sort(sortingAlphaList));
+    } else {
+      const sortingNumList = (a, b) => {
+        if (a.id > b.id) {
+          return 1;
+        }
+        if (a.id < b.id) {
+          return -1;
+        }
+      };
+
+      setChosenList([...chosenList].sort(sortingNumList));
+    }
   };
 
   let search;
@@ -22,7 +45,7 @@ export const Home = () => {
     if ((search = 0)) {
       setChosenList(pokemonList);
     } else {
-      setChosenList(filteredList);
+      setChosenList([...filteredList]);
     }
   };
 
@@ -50,5 +73,3 @@ export const Home = () => {
     </div>
   );
 };
-
-// if search.length === 0 dibuja pokemonlist : dibuja filteredList
