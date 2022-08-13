@@ -8,6 +8,9 @@ export const Home = () => {
   const [chosenList, setChosenList] = useState(pokemonList);
   const [filter, setFilter] = useState(pokemonList);
 
+  let search; //Variable que captura el texto del input
+  let filteredList; //Variable que devuelve la lista según la búsqueda
+
   const handleSearch = (e) => {
     search = e.target.value;
     filteredList = chosenList.filter((poke) => {
@@ -49,9 +52,6 @@ export const Home = () => {
       setFilter([...filter].sort(sortingNumList));
     }
   };
-
-  let search;
-  let filteredList;
 
   return (
     <div className="container">

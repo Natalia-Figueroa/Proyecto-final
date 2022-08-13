@@ -1,40 +1,16 @@
 import React from "react";
-import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./Card.css";
 
 export const Card = ({ pokemonList }) => {
   const { name } = useParams();
   const navigate = useNavigate();
-  const [imgIndex, setimgIndex] = useState(0);
-
-  const handleLeftClick = (e) => {
-    if (imgIndex == 0) {
-      setimgIndex(pokemonList.length - 1);
-    } else {
-      setimgIndex((previousState) => {
-        return previousState - 1;
-      });
-      console.log(imgIndex);
-    }
-  };
-  const handleRigthClick = (e) => {
-    if (imgIndex == pokemonList.length - 1) {
-      setimgIndex(0);
-    } else {
-      setimgIndex((previousState) => {
-        return previousState + 1;
-      });
-    }
-  };
 
   // Después probar con UseState
 
   let index;
 
   let newPokemon;
-
-  // let imageIndex;
 
   pokemonList.map((poke, i) => {
     if (poke.name === name) {
@@ -71,7 +47,6 @@ export const Card = ({ pokemonList }) => {
           } `}
         >
           <img
-            onClick={handleLeftClick}
             className="leftArrow"
             src="/Imagenes/Recursos/Frame.svg"
             alt=""
@@ -87,11 +62,7 @@ export const Card = ({ pokemonList }) => {
               : pokemonList[0].name
           } `}
         >
-          <img
-            onClick={handleRigthClick}
-            src="/Imagenes/Recursos/Frame.svg"
-            alt=""
-          />
+          <img src="/Imagenes/Recursos/Frame.svg" alt="" />
         </Link>
       </div>
       {/* EL WHITE BOX */}
