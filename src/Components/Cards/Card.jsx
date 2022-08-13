@@ -1,18 +1,45 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./Card.css";
 
 export const Card = ({ pokemonList }) => {
   const { name } = useParams();
   const navigate = useNavigate();
+  const [imgIndex, setimgIndex] = useState(0);
+
+  const handleLeftClick = (e) => {
+    if (imgIndex == 0) {
+      setimgIndex(pokemonList.length - 1);
+    } else {
+      setimgIndex((previousState) => {
+        return previousState - 1;
+      });
+      console.log(imgIndex);
+    }
+  };
+  const handleRigthClick = (e) => {
+    if (imgIndex == pokemonList.length - 1) {
+      setimgIndex(0);
+    } else {
+      setimgIndex((previousState) => {
+        return previousState + 1;
+      });
+    }
+  };
 
   // Después probar con UseState
 
+  let index;
+
   let newPokemon;
 
-  pokemonList.map((poke) => {
+  // let imageIndex;
+
+  pokemonList.map((poke, i) => {
     if (poke.name === name) {
       newPokemon = poke;
+      index = i;
     }
   });
 
@@ -35,9 +62,37 @@ export const Card = ({ pokemonList }) => {
       {/* POKEMON IMAGE AND ARROW */}
       <img className="pokeballImg" src="/Imagenes/Recursos/Pokeball.png" />
       <div className="pokeImgSection">
-        <img className="leftArrow" src="/Imagenes/Recursos/Frame.svg" alt="" />
+        {/* LEFT ARROW */}
+        <Link
+          to={`/card/${
+            pokemonList[index - 1]
+              ? pokemonList[index - 1].name
+              : pokemonList[pokemonList.length - 1].name
+          } `}
+        >
+          <img
+            onClick={handleLeftClick}
+            className="leftArrow"
+            src="/Imagenes/Recursos/Frame.svg"
+            alt=""
+          />
+        </Link>
+
         <img className="pokemonImg" src={newPokemon.img} alt="" />
-        <img src="/Imagenes/Recursos/Frame.svg" alt="" />
+        {/* RIGTH ARROW */}
+        <Link
+          to={`/card/${
+            pokemonList[index + 1]
+              ? pokemonList[index + 1].name
+              : pokemonList[0].name
+          } `}
+        >
+          <img
+            onClick={handleRigthClick}
+            src="/Imagenes/Recursos/Frame.svg"
+            alt=""
+          />
+        </Link>
       </div>
       {/* EL WHITE BOX */}
       <div className="whiteBox">
@@ -50,6 +105,7 @@ export const Card = ({ pokemonList }) => {
             {newPokemon.type[1]}
           </p>
         </div>
+        {/* ABOUT SECTION */}
         <h2>About</h2>
         <section className="about">
           <div className="weight">
@@ -75,6 +131,7 @@ export const Card = ({ pokemonList }) => {
           </div>
         </section>
         <p>{newPokemon.description}</p>
+        {/* STATS SECTION */}
         <h2>Base Stats</h2>
       </div>
     </div>

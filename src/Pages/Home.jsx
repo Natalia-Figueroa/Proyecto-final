@@ -6,6 +6,19 @@ import { pokemonList } from "../Database/Pokemon";
 export const Home = () => {
   const [order, setOrder] = useState(false);
   const [chosenList, setChosenList] = useState(pokemonList);
+  const [filter, setFilter] = useState(pokemonList);
+
+  const handleSearch = (e) => {
+    search = e.target.value;
+    filteredList = chosenList.filter((poke) => {
+      return poke.name.match(search);
+    });
+    if (search.length === 0) {
+      setChosenList(filter);
+    } else {
+      setChosenList([...filteredList]);
+    }
+  };
 
   const handleOrder = () => {
     setOrder(!order);
@@ -20,7 +33,9 @@ export const Home = () => {
       };
 
       setChosenList([...chosenList].sort(sortingAlphaList));
-    } else {
+      setFilter([...filter].sort(sortingAlphaList));
+    }
+    if (!order) {
       const sortingNumList = (a, b) => {
         if (a.id > b.id) {
           return 1;
@@ -31,23 +46,12 @@ export const Home = () => {
       };
 
       setChosenList([...chosenList].sort(sortingNumList));
+      setFilter([...filter].sort(sortingNumList));
     }
   };
 
   let search;
   let filteredList;
-
-  const handleSearch = (e) => {
-    search = e.target.value;
-    filteredList = pokemonList.filter((poke) => {
-      return poke.name.match(search);
-    });
-    if ((search = 0)) {
-      setChosenList(pokemonList);
-    } else {
-      setChosenList([...filteredList]);
-    }
-  };
 
   return (
     <div className="container">
