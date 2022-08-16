@@ -77,7 +77,7 @@ export const Card = ({ pokemonList }) => {
           </p>
         </div>
         {/* ABOUT SECTION */}
-        <h2>About</h2>
+        <h2 style={{ color: `${newPokemon.primary_color}` }}>About</h2>
         <section className="about">
           <div className="weight">
             <div>
@@ -103,7 +103,68 @@ export const Card = ({ pokemonList }) => {
         </section>
         <p>{newPokemon.description}</p>
         {/* STATS SECTION */}
-        <h2>Base Stats</h2>
+        <h2 style={{ color: `${newPokemon.primary_color}` }}>Base Stats</h2>
+        <section className="baseStats">
+          <div className="statName">
+            <span style={{ color: `${newPokemon.primary_color}` }}>HP</span>
+            <span style={{ color: `${newPokemon.primary_color}` }}>ATK</span>
+            <span style={{ color: `${newPokemon.primary_color}` }}>DEF</span>
+            <span style={{ color: `${newPokemon.primary_color}` }}>SATK</span>
+            <span style={{ color: `${newPokemon.primary_color}` }}>SDEF</span>
+            <span style={{ color: `${newPokemon.primary_color}` }}>SPD</span>
+          </div>
+          <div className="statValue">
+            <span>
+              <div>{newPokemon.hp}</div>
+              <progress
+                className="statProgress"
+                value={newPokemon.hp}
+                max="100"
+              ></progress>
+            </span>
+
+            <span>
+              <div>{newPokemon.atk}</div>
+              <progress
+                className="statProgress"
+                value={newPokemon.atk}
+                max="100"
+              ></progress>
+            </span>
+            <span>
+              <div>{newPokemon.def}</div>
+              <progress
+                className="statProgress"
+                value={newPokemon.def}
+                max="100"
+              ></progress>
+            </span>
+            <span>
+              <div>{newPokemon.satk}</div>
+              <progress
+                className="statProgress"
+                value={newPokemon.satk}
+                max="100"
+              ></progress>
+            </span>
+            <span>
+              <div>{newPokemon.sdef}</div>
+              <progress
+                className="statProgress"
+                value={newPokemon.sdef}
+                max="100"
+              ></progress>
+            </span>
+            <span>
+              <div>{newPokemon.spd}</div>
+              <progress
+                className="statProgress"
+                value={newPokemon.spd}
+                max="100"
+              ></progress>
+            </span>
+          </div>
+        </section>
       </div>
     </div>
   );

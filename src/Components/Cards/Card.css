@@ -69,3 +69,46 @@
   margin: 10px;
   color: white;
 }
+
+.statName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10px;
+  border-right: 1px solid rgba(0, 0, 0, 0.233);
+}
+.statValue {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.baseStats {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+span div {
+  padding-right: 10px;
+}
+
+.statProgress {
+  padding-left: 10px;
+  width: 100%;
+}
+
+.statValue span {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.statName span {
+  font-weight: bold;
+}
