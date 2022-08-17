@@ -130,8 +130,7 @@ export const Card = ({ pokemonList }) => {
             <span>
               <div>{newPokemon.hp}</div>
               <progress
-                // style={{ backgroundColor: `${newPokemon.primary_color}` }}
-                className="statProgress"
+                className={`statProgress ${pokemonList[index].name} `}
                 value={newPokemon.hp}
                 max="100"
               ></progress>
@@ -148,7 +147,7 @@ export const Card = ({ pokemonList }) => {
             <span>
               <div>{newPokemon.def}</div>
               <progress
-                className="statProgress"
+                className={`statProgress ${pokemonList[index].name} `}
                 value={newPokemon.def}
                 max="100"
               ></progress>
@@ -156,7 +155,7 @@ export const Card = ({ pokemonList }) => {
             <span>
               <div>{newPokemon.satk}</div>
               <progress
-                className="statProgress"
+                className={`statProgress ${pokemonList[index].name} `}
                 value={newPokemon.satk}
                 max="100"
               ></progress>
@@ -164,7 +163,7 @@ export const Card = ({ pokemonList }) => {
             <span>
               <div>{newPokemon.sdef}</div>
               <progress
-                className="statProgress"
+                className={`statProgress ${pokemonList[index].name} `}
                 value={newPokemon.sdef}
                 max="100"
               ></progress>
@@ -172,7 +171,7 @@ export const Card = ({ pokemonList }) => {
             <span>
               <div>{newPokemon.spd}</div>
               <progress
-                className="statProgress"
+                className={`statProgress ${pokemonList[index].name} `}
                 value={newPokemon.spd}
                 max="100"
               ></progress>
