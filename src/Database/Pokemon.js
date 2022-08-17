@@ -110,7 +110,7 @@ export const pokemonList = [
     sdef: "080",
     spd: "070",
     primary_color: "#A7B723",
-    secondary_color: "#A8991EC",
+    secondary_color: "#A891EC",
   },
   {
     name: "Gastly",

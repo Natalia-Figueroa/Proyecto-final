@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./Card.css";
 
@@ -11,8 +10,6 @@ export const Card = ({ pokemonList }) => {
   let index;
 
   let newPokemon;
-
-  let progressColor;
 
   pokemonList.map((poke, i) => {
     if (poke.name === name) {
@@ -67,22 +64,17 @@ export const Card = ({ pokemonList }) => {
       <div className="whiteBox">
         {/* POKEMON TYPE*/}
         <div className="types">
-          {newPokemon.type[0] && newPokemon.type[1] ? (
-            <>
-              <p style={{ backgroundColor: `${newPokemon.primary_color}` }}>
-                {newPokemon.type[0]}
-              </p>
-              <p style={{ backgroundColor: `${newPokemon.secondary_color}` }}>
-                {newPokemon.type[1]}
-              </p>
-            </>
-          ) : (
-            <>
-              <p style={{ backgroundColor: `${newPokemon.primary_color}` }}>
-                {newPokemon.type[0]}
-              </p>
-            </>
-          )}
+          {newPokemon.type.map((ty, i) => (
+            <p
+              style={
+                i === 0
+                  ? { backgroundColor: `${newPokemon.primary_color}` }
+                  : { backgroundColor: `${newPokemon.secondary_color}` }
+              }
+            >
+              {ty}
+            </p>
+          ))}
         </div>
         {/* ABOUT SECTION */}
         <h2
