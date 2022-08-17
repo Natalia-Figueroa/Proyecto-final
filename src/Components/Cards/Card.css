@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,700&display=swap");
+
 .pokeHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
 }
 
 .name_arrow {
@@ -10,12 +18,18 @@
   gap: 15px;
 }
 
+.pokeHeader h1 {
+  color: white;
+  z-index: 1;
+}
+
 .card {
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
   padding: 40px;
   position: absolute;
+  font-family: "DM Sans", sans-serif;
 }
 
 .pokeImgSection {
@@ -27,8 +41,10 @@
 }
 
 .leftArrow {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+  height: 30px;
+}
+.nextArrow {
+  height: 30px;
 }
 
 .whiteBox {
@@ -99,7 +115,7 @@ span div {
 }
 
 .statProgress {
-  padding-left: 10px;
+  /* padding-left: 10px; */
   width: 100%;
 }
 
@@ -107,8 +123,87 @@ span div {
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .statName span {
   font-weight: bold;
+}
+
+progress {
+  -webkit-appearance: none;
+}
+
+.Charmander::-webkit-progress-value {
+  background-color: #f57d31;
+}
+
+.Aron::-webkit-progress-value {
+  background-color: #b7b9d0;
+}
+
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.height {
+  border-left: 1px solid rgba(0, 0, 0, 0.192);
+  border-right: 1px solid rgba(0, 0, 0, 0.192);
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weight {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.moves {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.weight div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.height div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+.about span {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.moves div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.movesTitle {
+  text-align: center;
+  margin: 0px;
 }

@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,700&display=swap");
+
 .App {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
+  font-family: "DM Sans", sans-serif;
 }
 
 .container {
