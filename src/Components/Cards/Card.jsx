@@ -1,5 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./Card.css";
+import { ProgressBar } from "./ProgressBar";
 
 export const Card = ({ pokemonList }) => {
   const { name } = useParams();
@@ -119,55 +120,36 @@ export const Card = ({ pokemonList }) => {
             <span style={{ color: `${newPokemon.primary_color}` }}>SPD</span>
           </div>
           <div className="statValue">
-            <span>
-              <div>{newPokemon.hp}</div>
-              <progress
-                className={`statProgress ${pokemonList[index].name} `}
-                value={newPokemon.hp}
-                max="100"
-              ></progress>
-            </span>
-
-            <span>
-              <div>{newPokemon.atk}</div>
-              <progress
-                className={`statProgress ${pokemonList[index].name} `}
-                value={newPokemon.atk}
-                max="100"
-              ></progress>
-            </span>
-            <span>
-              <div>{newPokemon.def}</div>
-              <progress
-                className={`statProgress ${pokemonList[index].name} `}
-                value={newPokemon.def}
-                max="100"
-              ></progress>
-            </span>
-            <span>
-              <div>{newPokemon.satk}</div>
-              <progress
-                className={`statProgress ${pokemonList[index].name} `}
-                value={newPokemon.satk}
-                max="100"
-              ></progress>
-            </span>
-            <span>
-              <div>{newPokemon.sdef}</div>
-              <progress
-                className={`statProgress ${pokemonList[index].name} `}
-                value={newPokemon.sdef}
-                max="100"
-              ></progress>
-            </span>
-            <span>
-              <div>{newPokemon.spd}</div>
-              <progress
-                className={`statProgress ${pokemonList[index].name} `}
-                value={newPokemon.spd}
-                max="100"
-              ></progress>
-            </span>
+            <ProgressBar
+              text={newPokemon.hp}
+              value={newPokemon.hp}
+              className={`statProgress ${newPokemon.name} `}
+            />
+            <ProgressBar
+              text={newPokemon.atk}
+              value={newPokemon.atk}
+              className={`statProgress ${newPokemon.name} `}
+            />
+            <ProgressBar
+              text={newPokemon.def}
+              value={newPokemon.def}
+              className={`statProgress ${newPokemon.name} `}
+            />
+            <ProgressBar
+              text={newPokemon.satk}
+              value={newPokemon.satk}
+              className={`statProgress ${newPokemon.name} `}
+            />
+            <ProgressBar
+              text={newPokemon.sdef}
+              value={newPokemon.sdef}
+              className={`statProgress ${newPokemon.name} `}
+            />
+            <ProgressBar
+              text={newPokemon.spd}
+              value={newPokemon.spd}
+              className={`statProgress ${newPokemon.name} `}
+            />
           </div>
         </section>
       </div>
